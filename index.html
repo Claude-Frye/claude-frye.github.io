@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
     <!-- import JavaScript -->
     <script src="https://unpkg.com/element-plus"></script>
-    <title>Element Plus demo</title>
+    <script src="//unpkg.com/@element-plus/icons-vue"></script>
+    <title>Claude Frye</title>
   </head>
   <body>
       <div id="app" class="common-layout">
         <el-container>
-          <el-aside width="200px">Aside</el-aside>
+          <el-aside width="200px">
+            <el-avatar shape="square" :size="100" :fit="fit" :src="url" />  
+          </el-aside>
           <el-container>
             <el-header>
               <el-button>Button</el-button>
@@ -27,6 +30,8 @@
         data() {
           return {
             message: "Hello Element Plus",
+            fit: "cover",
+            url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
           };
         },
       };
