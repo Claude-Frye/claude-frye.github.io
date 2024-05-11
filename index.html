@@ -20,7 +20,9 @@
             <el-header>
               <el-button>Button</el-button>
             </el-header>
-            <el-main>Main</el-main>
+            <el-main>
+              {{ pianwen }}
+            </el-main>
             <el-footer>Footer</el-footer>
           </el-container>
         </el-container>
@@ -31,9 +33,13 @@
           return {
             message: "Hello Element Plus",
             fit: "cover",
-            url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+            url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+            pianwen: ""
           };
         },
+        mounted (){
+          this.pianwen = this.readFile('./twgx.txt')          
+        }
       };
       const app = Vue.createApp(App);
       app.use(ElementPlus);
