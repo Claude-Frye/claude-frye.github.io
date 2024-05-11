@@ -39,7 +39,19 @@
           };
         },
         mounted() {
-          this.pianwen = this.readFile('/twgx.txt')          
+          this.pianwen = this.loadTxtFile('/twgx.txt')          
+        },
+        methods: {
+          loadTxtFile(txt) {
+            fetch('/twgx.txt')
+              .then(response => response.text())
+              .then(text => {
+                this.fileContent = text;
+              })
+              .catch(error => {
+                console.error('Error loading the file:', error);
+              });
+            }
         }
       };
       const app = Vue.createApp(App);
