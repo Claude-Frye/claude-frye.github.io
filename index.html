@@ -21,7 +21,6 @@
               <el-button>Button</el-button>
             </el-header>
             <el-main>
-              <el-button>Button</el-button>
               {{ pianwen }}
             </el-main>
             <el-footer>Footer</el-footer>
@@ -38,11 +37,11 @@
             pianwen: ""
           };
         },
-        mounted() {
-          this.pianwen = this.loadTxtFile('/twgx.txt')          
+        created() {
+          this.pianwen = this.loadTxtFile()          
         },
         methods: {
-          loadTxtFile(txt) {
+          loadTxtFile() {
             fetch('/twgx.txt')
               .then(response => response.text())
               .then(text => {
